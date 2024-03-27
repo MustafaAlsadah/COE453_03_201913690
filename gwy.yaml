@@ -1,0 +1,60 @@
+swagger: "2.0"
+info:
+  title: hw3API
+  description: coe453HW3API
+  version: 1.0.0
+
+host: hw3.apigateway.coe453hw3.cloud.goog
+basePath: /
+schemes:
+  - https
+  - http
+
+paths:
+  /mul:
+    post:
+      operationId: postMul
+      summary: multiplication
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453hw3.cloudfunctions.net/mulFunc
+
+  /div:
+    post:
+      operationId: postDiv
+      summary: division
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453hw3.cloudfunctions.net/divFunc
+
+  /add:
+    post:
+      operationId: postAdd
+      summary: addition
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453hw3.cloudfunctions.net/addFunc
+
+  /sub:
+    post:
+      operationId: postSub
+      summary: subtraction
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453hw3.cloudfunctions.net/subFunc
